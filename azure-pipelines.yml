@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Unity Windows
+
+steps:
+- task: UnityBuildTask@3
+  name: unitybuild
+  inputs:
+    buildTarget: standalone
+    outputPath: $(Build.BinariesDirectory)
+    outputFileName: drop
+
+- script: |
+    echo $(unitybuild.logsOutputPath)
