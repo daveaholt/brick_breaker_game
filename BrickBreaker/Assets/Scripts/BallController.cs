@@ -37,6 +37,11 @@ public class BallController : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
+        else if (collision.gameObject.tag == "Top")
+        {
+            var addDownwardThrust = new Vector2(rb.velocity.x, rb.velocity.y - 1);
+            rb.AddForce(addDownwardThrust, ForceMode2D.Force);
+        }
         else
         {
             bounceCount++;
