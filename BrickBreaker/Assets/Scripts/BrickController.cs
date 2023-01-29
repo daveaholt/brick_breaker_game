@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BrickController : MonoBehaviour
 {
+    private AudioSource _audioSource;
+    private SpriteRenderer _renderer;
+
     public int HitCount;
+    private int _strength;
     Color green;
     Color yellow;
     Color red;
@@ -15,12 +19,24 @@ public class BrickController : MonoBehaviour
         ColorUtility.TryParseHtmlString("#29E076", out green);
         ColorUtility.TryParseHtmlString("#e6df20", out yellow);
         ColorUtility.TryParseHtmlString("#d15241", out red);
-        ManageColor();
+        _strength = HitCount;
     }
 
     void Start()
     {
         GameManager.instance.brickCount++;
+        _audioSource = GetComponent<AudioSource>();
+        if(_audioSource == null)
+        {
+            Debug.LogError("AudioSource is null.");
+        }
+
+        _renderer = GetComponent<SpriteRenderer>();
+        if(_renderer == null)
+        {
+            Debug.LogError("SpriteRenderer is null.");
+        }
+                ManageColor();
     }
 
     // Update is called once per frame
@@ -31,34 +47,41 @@ public class BrickController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        _audioSource.Play();
+
         if (collision.gameObject.tag == "Ball")
-        {
+        {            
             ManageColor();
-            if (HitCount > 1)
+            if (_strength > 1)
             {
-                HitCount--;
+                _strength--;
             }
             else
             {
                 GameManager.instance.brickCount--;
-                Destroy(gameObject);
+                Invoke("KillMe", .2f);
             }
         }
     }
 
+    private void KillMe()
+    {
+        Destroy(gameObject);
+    }
+
     private void ManageColor()
     {
-        if (HitCount < 2)
+        if (_strength < 3)
         {
-            GetComponent<SpriteRenderer>().color = green;
+            _renderer.color = green;
         }
-        else if (HitCount >= 2 && HitCount < 5)
+        else if (_strength >= 3 && _strength < 6)
         {
-            GetComponent<SpriteRenderer>().color = yellow;
+            _renderer.color = yellow;
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = red;
+            _renderer.color = red;
         }
     }
 }

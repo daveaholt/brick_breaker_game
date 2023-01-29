@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,7 +30,14 @@ public class GameManager : MonoBehaviour
     {
         if(isStarted && brickCount == 0)
         {
-            SceneManager.LoadScene("Menu");
+            if(SceneManager.GetActiveScene().name == "Level_1")
+            {
+                SceneManager.LoadScene("Level_2");
+            }
+            else
+            {
+                SceneManager.LoadScene("Menu");
+            }            
         }
     }
 

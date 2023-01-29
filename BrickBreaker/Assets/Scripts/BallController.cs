@@ -25,9 +25,14 @@ public class BallController : MonoBehaviour
     {
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, bounceForce);
+    }
+
     void StartBounce()
     {
-        var randomDirection = new Vector2(Random.Range(-1, 1), 1);
+        var randomDirection = new Vector2(Random.Range(-1, 0), 1);
         rb.AddForce(randomDirection * bounceForce, ForceMode2D.Impulse);
     }
 
@@ -40,6 +45,16 @@ public class BallController : MonoBehaviour
         else if (collision.gameObject.tag == "Top")
         {
             var addDownwardThrust = new Vector2(rb.velocity.x, rb.velocity.y - 1);
+            rb.AddForce(addDownwardThrust, ForceMode2D.Force);
+        }
+        else if (collision.gameObject.tag == "Right")
+        {
+            var addDownwardThrust = new Vector2(rb.velocity.x - 1, rb.velocity.y);
+            rb.AddForce(addDownwardThrust, ForceMode2D.Force);
+        }
+        else if (collision.gameObject.tag == "Left")
+        {
+            var addDownwardThrust = new Vector2(rb.velocity.x + 1, rb.velocity.y);
             rb.AddForce(addDownwardThrust, ForceMode2D.Force);
         }
     }
