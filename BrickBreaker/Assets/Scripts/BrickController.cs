@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 public class BrickController : MonoBehaviour
 {
     public int HitCount;
-    private int _strength;
+    Color green;
+    Color yellow;
+    Color red;
 
     public void Awake()
     {
-        _strength = HitCount;
+        ColorUtility.TryParseHtmlString("#29E076", out green);
+        ColorUtility.TryParseHtmlString("#e6df20", out yellow);
+        ColorUtility.TryParseHtmlString("#d15241", out red);
+        ManageColor();
     }
 
     void Start()
@@ -28,15 +33,32 @@ public class BrickController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            if(_strength > 1)
+            ManageColor();
+            if (HitCount > 1)
             {
-                _strength--;
+                HitCount--;
             }
             else
             {
                 GameManager.instance.brickCount--;
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void ManageColor()
+    {
+        if (HitCount < 2)
+        {
+            GetComponent<SpriteRenderer>().color = green;
+        }
+        else if (HitCount >= 2 && HitCount < 5)
+        {
+            GetComponent<SpriteRenderer>().color = yellow;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = red;
         }
     }
 }

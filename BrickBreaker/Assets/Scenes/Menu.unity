@@ -367,7 +367,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.21266466, g: 0.21272236, b: 0.254717, a: 1}
+  m_BackGroundColor: {r: 0.29125133, g: 0.35672075, b: 0.5188679, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -923,7 +923,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 182.75}
-  m_SizeDelta: {x: 1594.61, y: 365.497}
+  m_SizeDelta: {x: 1452.0262, y: 365.497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042651469
 MonoBehaviour:
@@ -947,7 +947,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1286550bda57ed34d8186d37f8c1be82, type: 3}
-    m_FontSize: 150
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

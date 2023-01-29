@@ -42,16 +42,5 @@ public class BallController : MonoBehaviour
             var addDownwardThrust = new Vector2(rb.velocity.x, rb.velocity.y - 1);
             rb.AddForce(addDownwardThrust, ForceMode2D.Force);
         }
-        else
-        {
-            bounceCount++;
-            if( bounceCount > 9)
-            {
-                bounceForce = bounceForce + 10;
-                var forceVector = new Vector2(rb.velocity.x, rb.velocity.y);
-                rb.AddForce(forceVector * bounceForce);
-                bounceCount = 0;
-            }
-        }
     }
 }
