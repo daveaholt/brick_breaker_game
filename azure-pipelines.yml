@@ -17,7 +17,8 @@ steps:
   inputs:
     buildTarget: 'Win64'
     unityProjectPath: '\BrickBreaker'
-    versionSelectionMode: 'project'
+    versionSelectionMode: 'specify'
+    version: '2021.3.17f1'
     outputPath: '$(Build.BinariesDirectory)'
     outputFileName: 'BrickBreaker'
 
