@@ -15,9 +15,9 @@ steps:
 - task: UnityBuildTask@3
   name: unitybuild
   inputs:
-    buildTarget: standalone
-    outputPath: $(Build.BinariesDirectory)
-    outputFileName: drop
+    buildTarget: 'Win64'
+    unityProjectPath: '\BrickBreaker'
+    versionSelectionMode: 'project'
+    outputPath: '$(Build.BinariesDirectory)'
+    outputFileName: 'BrickBreaker'
 
-- script: |
-    echo $(unitybuild.logsOutputPath)
