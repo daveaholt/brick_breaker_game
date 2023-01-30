@@ -8,14 +8,17 @@ trigger:
 
 pool:
   name: Default
+  demands:
+    Unity_2021.3
 
 steps:
 - task: UnityBuildTask@3
   name: unitybuild
   inputs:
-    buildTarget: standalone
-    outputPath: $(Build.BinariesDirectory)
-    outputFileName: drop
+    buildTarget: 'Win64'
+    unityProjectPath: '$(System.DefaultWorkingDirectory)/BrickBreaker'
+    versionSelectionMode: 'specify'
+    version: '2021.3.17f1'
+    outputPath: '$(Build.BinariesDirectory)'
+    outputFileName: 'BrickBreaker'
 
-- script: |
-    echo $(unitybuild.logsOutputPath)
