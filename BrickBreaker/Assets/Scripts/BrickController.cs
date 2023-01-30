@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BrickController : MonoBehaviour
 {
@@ -36,7 +37,8 @@ public class BrickController : MonoBehaviour
         {
             Debug.LogError("SpriteRenderer is null.");
         }
-                ManageColor();
+        ManageColor();
+        Invoke("UpdateScore", .2f);
     }
 
     // Update is called once per frame
@@ -59,9 +61,17 @@ public class BrickController : MonoBehaviour
             else
             {
                 GameManager.instance.brickCount--;
+                GameManager.instance.Score++;
+                UpdateScore();
                 Invoke("KillMe", .2f);
             }
         }
+    }
+
+    private void UpdateScore()
+    {
+        var scoreText = GameObject.Find("Score").GetComponent<Text>();
+        scoreText.text = GameManager.instance.Score.ToString();
     }
 
     private void KillMe()

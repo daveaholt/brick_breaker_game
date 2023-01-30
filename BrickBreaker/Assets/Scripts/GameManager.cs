@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public int brickCount;
     private bool isStarted;
 
+    public int Score;
+
     private void Awake()
     {
         instance = this;
@@ -18,6 +20,18 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isStarted = true;
+        if (SceneManager.GetActiveScene().name == "Level_1")
+        {
+            Score = 0;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            Score = 30;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level_3")
+        {
+            Score = 60;
+        }
     }
 
 
@@ -33,6 +47,10 @@ public class GameManager : MonoBehaviour
             if(SceneManager.GetActiveScene().name == "Level_1")
             {
                 SceneManager.LoadScene("Level_2");
+            }
+            else if(SceneManager.GetActiveScene().name == "Level_2")
+            {
+                SceneManager.LoadScene("Level_3");
             }
             else
             {

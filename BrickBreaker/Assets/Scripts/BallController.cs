@@ -14,6 +14,8 @@ public class BallController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bounceCount = 0;
+        var gameOverText = GameObject.Find("Game_Over").GetComponent<Text>();
+        gameOverText.enabled = false;
     }
 
     void Start()
@@ -48,7 +50,10 @@ public class BallController : MonoBehaviour
     {
         if(collision.gameObject.tag == "FallCheck")
         {
-            SceneManager.LoadScene("Menu");
+            var gameOverText = GameObject.Find("Game_Over").GetComponent<Text>();
+            gameOverText.enabled = true;
+            rb.velocity = Vector2.zero;
+            Invoke("LoadMainMenu", 1f);
         }
         else if (collision.gameObject.tag == "Top")
         {
@@ -65,5 +70,10 @@ public class BallController : MonoBehaviour
             var addDownwardThrust = new Vector2(rb.velocity.x + 1, rb.velocity.y);
             rb.AddForce(addDownwardThrust, ForceMode2D.Force);
         }
+    }
+
+    private void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
