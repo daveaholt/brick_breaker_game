@@ -2,3 +2,5 @@
 
 # brick_breaker_game
 A version of the classic Atari Breakthrough game made as a learning exercise in Unity Android game creation.
+
+This is meant for Android build settings and uses a 920x1080 landscape aspect ratio.
