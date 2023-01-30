@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour
 {
@@ -17,12 +18,19 @@ public class BallController : MonoBehaviour
 
     void Start()
     {
-        StartBounce();
+        Invoke("HideTextAndStart", 1f);
     }
 
     
     void Update()
     {
+    }
+
+    private void HideTextAndStart()
+    {
+        var levelText = GameObject.Find("Level_Text").GetComponent<Text>();
+        levelText.enabled = false;
+        StartBounce();
     }
 
     private void FixedUpdate()
