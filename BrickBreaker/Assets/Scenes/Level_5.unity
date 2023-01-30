@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickCount: 0
+  BrickBreakerState: {fileID: 11400000, guid: 700764f4ddbbc6a4ea0b6a0b5ecc1544, type: 2}
   Score: 0
 --- !u!4 &30412638
 Transform:

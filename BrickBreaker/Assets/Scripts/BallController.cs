@@ -74,6 +74,7 @@ public class BallController : MonoBehaviour
             var gameOverText = GameObject.Find("Game_Over").GetComponent<Text>();
             gameOverText.enabled = true;
             rb.velocity = Vector2.zero;
+            GameManager.instance.Score = 0;
             Invoke("LoadMainMenu", 1f);
         }
         else if (collision.gameObject.tag == "Top")
