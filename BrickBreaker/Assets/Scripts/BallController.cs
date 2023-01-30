@@ -38,6 +38,10 @@ public class BallController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, bounceForce);
+        if (rb.velocity.magnitude < bounceForce)
+        {
+            rb.velocity = rb.velocity.normalized * bounceForce;
+        }
     }
 
     void StartBounce()
