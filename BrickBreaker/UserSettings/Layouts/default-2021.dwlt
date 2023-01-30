@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 112
+  controlID: 131
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 136
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -310,7 +310,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d0ccfdff1acdfdffdecffdff4ad1fdffbed2fdffc2d2fdff84d9fdff24dcfdffd0defdffbae4fdff62e7fdff3ceafdffe4ecfdff90effdff46f2fdffe2f4fdfffefafdff6afdfdffc6fffdff3805feffa808feff860afeffee0ffeff7416feffe21afeff221ffeff0e23feff4c30feff9630feff1832feff8433feff8833feffac34fefff634feff7836feffe437feffe837feff6e39feffb839feff803cfefff03dfefffe3dfeff1641fefff244feff1448feff184bfeff044dfeffd04ffeffce51feff5452feff1654feff9a57feff5c59feff485afeff925afeff565dfeffc25efeffd65efeff5e65feff5067feff726afeff206cfeff906ffeff3671feffae73feff2ac8feff7acbfeff56ccfeffa4ccfeff2ccffeff40cffeff4ef1feff98f1feff48f2feff4cf2feff52f3feff9cf3feff8ef5feffa2f5feffacf8fefff6f8feffe8fafefffcfafeff0a0cffff9853ffff9665ffffb06affffeecbffff98ccffff52cdffffb0d3ffff6cd7ffffb6d7ffff16d9ffff1ad9ffff2ce5ffff7cebffff28fbffff705f0000da800000fe800000d6810000448200004c820000209100004491000056f30000300b0100380c010096aa010092ac010014ad010014ae010062af010030b0010080b1010002b30100a2c90100a6cc01000ecd01001cda01007ae3010024e50100ace60100b2fe01002210020038100200
+      m_ExpandedIDs: d0efffff1af0ffffdef2ffff4af4ffffb6f5ffffc0f5ffffdef9ffff26fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -416,22 +416,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\davea\OneDrive\Documents\Git Repos\brick_breaker_game\BrickBreaker
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae5f0000
-    m_LastClickedID: 24494
-    m_ExpandedIDs: 000000009e5f0000ea600000e0790000cc7d0000027e00006680000000ca9a3bffffff7f
+    m_SelectedIDs: 3a600000
+    m_LastClickedID: 24634
+    m_ExpandedIDs: 00000000226000002460000026600000286000002a6000002c60000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e5f0000
+    m_ExpandedIDs: 00000000226000002460000026600000286000002a6000002c600000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1044.647, y: 966.0906, z: -7.602287}
     speed: 2
-    m_Value: {x: 1050.36, y: 941.4346, z: -7.274543}
+    m_Value: {x: 1044.647, y: 966.0906, z: -7.602287}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 761.09534
     speed: 2
-    m_Value: 728.3209
+    m_Value: 761.09534
   m_Ortho:
     m_Target: 1
     speed: 2
