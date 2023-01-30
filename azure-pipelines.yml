@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: Default
+  name: windows
 
 steps:
 - task: UnityBuildTask@3
