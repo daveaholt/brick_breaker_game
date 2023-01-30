@@ -42,6 +42,23 @@ public class BallController : MonoBehaviour
         {
             rb.velocity = rb.velocity.normalized * bounceForce;
         }
+        if(rb.velocity.x > -0.05 && rb.velocity.x < 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x - .06f, rb.velocity.y);
+        }
+        else if (rb.velocity.x > 0 && rb.velocity.x < 0.05)
+        {
+            rb.velocity = new Vector2(rb.velocity.x + .6f, rb.velocity.y);
+        }
+
+        if (rb.velocity.y > -0.05 && rb.velocity.y < 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y - .6f);
+        }
+        else if (rb.velocity.y > 0 && rb.velocity.y < 0.05)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + .6f);
+        }
     }
 
     void StartBounce()

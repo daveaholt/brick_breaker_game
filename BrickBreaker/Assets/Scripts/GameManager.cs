@@ -32,6 +32,14 @@ public class GameManager : MonoBehaviour
         {
             Score = 60;
         }
+        else if (SceneManager.GetActiveScene().name == "Level_4")
+        {
+            Score = 90;
+        }
+        else if (SceneManager.GetActiveScene().name == "Level_5")
+        {
+            Score = 120;
+        }
     }
 
 
@@ -51,6 +59,14 @@ public class GameManager : MonoBehaviour
             else if(SceneManager.GetActiveScene().name == "Level_2")
             {
                 SceneManager.LoadScene("Level_3");
+            }
+            else if(SceneManager.GetActiveScene().name == "Level_3")
+            {
+                SceneManager.LoadScene("Level_4");
+            }
+            else if(SceneManager.GetActiveScene().name == "Level_4")
+            {
+                SceneManager.LoadScene("Level_5");
             }
             else
             {
